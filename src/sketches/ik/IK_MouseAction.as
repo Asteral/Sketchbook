@@ -1,4 +1,4 @@
-﻿package sketches.core.ik
+﻿package sketches.ik
 {
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
@@ -7,8 +7,9 @@
 	import flash.geom.Rectangle;
 	
 	import mx.core.UIComponent;
+	import sketches.ik.core.Chain;
 
-    public class CanvasV1 extends UIComponent
+    public class IK_MouseAction extends UIComponent
     {
         private var ikchains:Vector.<Chain>;
         private var draw_canvas:Sprite;
@@ -20,7 +21,7 @@
         public static const INIT_SPEED:int = 5;
         public static const CHAIN_AMO:int = 1;
 
-        public function CanvasV1(w:Number, h:Number)
+        public function IK_MouseAction(w:Number, h:Number)
         {
             this.width = w;
             this.height = h;
@@ -80,7 +81,6 @@
         public function restart_invert() : void
         {
             this.col = this.change_col();
-            trace("changing");
         }
 
         private function change_col() : uint

@@ -1,6 +1,6 @@
 package com
 {
-	import sketches.core.ik.CanvasV1;
+	import sketches.ik.IK_MouseAction;
 	
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -13,21 +13,21 @@ package com
 		public static const HEIGHT:int = 500;
 		
 		private var frame_count:int=0;
-		private var ik:CanvasV1;
+		private var ik:IK_MouseAction;
 		private var rendering:Boolean;
 		
 		private var bg_col:uint = 0xFFF;
 		
 		public function MainPage()
 		{
-			ik = new CanvasV1(WIDTH, HEIGHT);
+			this.addChild(new BasicInfo());
+			
+			ik = new IK_MouseAction(WIDTH, HEIGHT);
 			this.addChild(ik);
 
 			this.addEventListener(Event.ENTER_FRAME, update);
 			rendering = true;
 			this.addEventListener(MouseEvent.CLICK, toggle_render);
-			
-			this.addChild(new BasicInfo());
 		}
 		
 		private function update(evt:Event):void

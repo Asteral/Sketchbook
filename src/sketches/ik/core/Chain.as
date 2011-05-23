@@ -1,4 +1,4 @@
-﻿package sketches.core.ik
+﻿package sketches.ik.core
 {
 	import caurina.transitions.Tweener;
 	
